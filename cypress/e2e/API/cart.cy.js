@@ -1,5 +1,6 @@
-// 16
 describe('Funcionalidade: Cart API', () => {
+
+    // 16
     it('Dado que quero listar todos os carrinhos, Quando der GET/Start, Então deve retornar 200 e um array', () => {
         cy.request("GET", "https://fakestoreapi.com/carts").then((response) => {
             expect(response.status).to.equal(200);
@@ -7,6 +8,7 @@ describe('Funcionalidade: Cart API', () => {
         })
     })
 
+    // 17
     it('Dado que tenho um carrinho válido, quando eu filtrar um id específico então eu recebo', () => {
         cy.request("GET", "https://fakestoreapi.com/carts/1").then((response) => {
             expect(response.status).to.equal(200);
@@ -15,6 +17,8 @@ describe('Funcionalidade: Cart API', () => {
             expect(response.body).to.have.property('products').and.to.be.an('array');
         })
     })
+
+    // 18
     it('Dado que desejo cadastrar um novo carrinho, quando eu enviar um payload válido, Então o carrinho será adicionado', () => {
         const newCart = {
             id: 0,
